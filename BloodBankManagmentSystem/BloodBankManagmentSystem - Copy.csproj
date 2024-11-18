@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FC67944F-3088-464D-AFCB-E643579ABB8E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BloodBankManagmentSystem</RootNamespace>
+    <AssemblyName>BloodBankManagmentSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.5.0.0\lib\net461\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.5.0.0\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.5.0.0\lib\net461\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=5.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.5.0.0\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfiumViewer, Version=2.13.0.0, Culture=neutral, PublicKeyToken=91e4789cfb0609e0, processorArchitecture=MSIL">
+      <HintPath>..\packages\PdfiumViewer.2.13.0.0\lib\net20\PdfiumViewer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.5.0.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.0\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DemoReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DemoReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Hospital1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hospital1.Designer.cs">
+      <DependentUpon>Hospital1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AllReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AllReport.Designer.cs">
+      <DependentUpon>AllReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Blood Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Blood Request.Designer.cs">
+      <DependentUpon>Blood Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BloodRequestReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BloodRequestReport.Designer.cs">
+      <DependentUpon>BloodRequestReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\bloodstock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\bloodstock.Designer.cs">
+      <DependentUpon>bloodstock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BloodStock1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BloodStock1.Designer.cs">
+      <DependentUpon>BloodStock1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BRequestHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BRequestHistory.Designer.cs">
+      <DependentUpon>BRequestHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BRReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BRReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BSDonor.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BSDonor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BSsupplier.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BSsupplier.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\BStockDonor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BStockDonor.Designer.cs">
+      <DependentUpon>BStockDonor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BStockSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BStockSupplier.Designer.cs">
+      <DependentUpon>BStockSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DHistory.Designer.cs">
+      <DependentUpon>DHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DonorReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DonorReport.Designer.cs">
+      <DependentUpon>DonorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Donors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Donors.Designer.cs">
+      <DependentUpon>Donors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\formHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\formHome.Designer.cs">
+      <DependentUpon>formHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FormUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FormUsers.Designer.cs">
+      <DependentUpon>FormUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\fromUsers.cs" />
+    <Compile Include="UI\login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\payment.Designer.cs">
+      <DependentUpon>payment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PaymentReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PaymentReport.Designer.cs">
+      <DependentUpon>PaymentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Phistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Phistory.Designer.cs">
+      <DependentUpon>Phistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\Shistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Shistory.Designer.cs">
+      <DependentUpon>Shistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SStock.Designer.cs">
+      <DependentUpon>SStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StockH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\StockH.Designer.cs">
+      <DependentUpon>StockH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\supplier.Designer.cs">
+      <DependentUpon>supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SupplierReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SupplierReport.Designer.cs">
+      <DependentUpon>SupplierReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SupReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SupReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\UserReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserReports.Designer.cs">
+      <DependentUpon>UserReports.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="DemoReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DemoReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\AllReport.resx">
+      <DependentUpon>AllReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Blood Request.resx">
+      <DependentUpon>Blood Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BloodRequestReport.resx">
+      <DependentUpon>BloodRequestReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\bloodstock.resx">
+      <DependentUpon>bloodstock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BloodStock1.resx">
+      <DependentUpon>BloodStock1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BRequestHistory.resx">
+      <DependentUpon>BRequestHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BRReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BRReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BSDonor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BSDonor.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BSsupplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BSsupplier.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BStockDonor.resx">
+      <DependentUpon>BStockDonor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BStockSupplier.resx">
+      <DependentUpon>BStockSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DHistory.resx">
+      <DependentUpon>DHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DonorReport.resx">
+      <DependentUpon>DonorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Donors.resx">
+      <DependentUpon>Donors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\formHome.resx">
+      <DependentUpon>formHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FormUsers.resx">
+      <DependentUpon>FormUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\payment.resx">
+      <DependentUpon>payment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PaymentReport.resx">
+      <DependentUpon>PaymentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Phistory.resx">
+      <DependentUpon>Phistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Shistory.resx">
+      <DependentUpon>Shistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SStock.resx">
+      <DependentUpon>SStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\StockH.resx">
+      <DependentUpon>StockH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\supplier.resx">
+      <DependentUpon>supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SupplierReport.resx">
+      <DependentUpon>SupplierReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SupReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SupReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserReports.resx">
+      <DependentUpon>UserReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
