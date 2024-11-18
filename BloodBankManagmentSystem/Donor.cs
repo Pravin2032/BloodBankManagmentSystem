@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BloodBankManagmentSystem.UI {
+namespace BloodBankManagmentSystem {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace BloodBankManagmentSystem.UI {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public partial class DonorReport : ReportClass {
+    public class Donor : ReportClass {
         
-        public DonorReport() {
+        public Donor() {
         }
         
         public override string ResourceName {
             get {
-                return "DonorReport.rpt";
+                return "Donor.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace BloodBankManagmentSystem.UI {
         
         public override string FullResourceName {
             get {
-                return "BloodBankManagmentSystem.UI.DonorReport.rpt";
+                return "BloodBankManagmentSystem.Donor.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace BloodBankManagmentSystem.UI {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedDonorReport : Component, ICachedReport {
+    public class CachedDonor : Component, ICachedReport {
         
-        public CachedDonorReport() {
+        public CachedDonor() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace BloodBankManagmentSystem.UI {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            DonorReport rpt = new DonorReport();
+            Donor rpt = new Donor();
             rpt.Site = this.Site;
             return rpt;
         }

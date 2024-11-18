@@ -135,6 +135,13 @@ namespace BloodBankManagmentSystem.UI
         {
          
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Hos hos     = new Hos();
+            hos.Show();
+                
+        }
     }
     }
 
